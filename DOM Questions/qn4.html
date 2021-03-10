@@ -1,0 +1,48 @@
+<!-- 4. Here is a sample html file with a submit button. 
+Write a JavaScript function to get the value of the href, hreflang, rel, target, 
+and type attributes of the specified link.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">
+            w3resource
+        </a>
+    </p>
+    <button id="btn1">Click here to get attributes value</button>
+</body>
+<script>
+     const button = document.querySelector('#btn1');
+     button.addEventListener('click' , getAttributes)
+    function getAttributes(e)
+    {
+        const link = document.querySelector('#w3r')
+        // console.log(`
+        //         ATTRIBUTES
+        //     href : ${link.getAttribute('href')}
+        //     hreflang : ${link.getAttribute('hreflang')}
+        //     rel : ${link.getAttribute('rel')}
+        //     target : ${link.getAttribute('target')}
+        //     type : ${link.getAttribute('type')}
+        // `)
+        
+        let arr = Array();
+
+        for (let i = 0; i < link.attributes.length; i++)
+         {
+          arr.push(link.attributes[i].nodeValue);
+       }
+
+       for (i = 0; i < arr.length; i++) {
+            console.log(arr[i])
+            }
+}
+</script>
+</html>
